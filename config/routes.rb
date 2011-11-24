@@ -1,4 +1,6 @@
 Snapper::Application.routes.draw do
+  resources :snaps
+
   devise_for :users
 
   # The priority is based upon order of creation:

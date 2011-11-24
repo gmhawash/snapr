@@ -1,0 +1,19 @@
+%h1 Listing snaps
+
+%table
+  %tr
+    %th Html
+    %th
+    %th
+    %th
+
+  - @snaps.each do |snap|
+    %tr
+      %td= snap.html
+      %td= link_to 'Show', snap
+      %td= link_to 'Edit', edit_snap_path(snap)
+      %td= link_to 'Destroy', snap, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Snap', new_snap_path

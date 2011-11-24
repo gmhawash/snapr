@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Html:
+  = @snap.html
+
+= link_to 'Edit', edit_snap_path(@snap)
+\|
+= link_to 'Back', snaps_path
