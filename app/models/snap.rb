@@ -18,7 +18,7 @@ class Snap < ActiveRecord::Base
 
       # save to AWS
       store
-      tag.set_attribute(attr.to_s, public_url)
+      tag.set_attribute(attr.to_s, private_url)
     end
   end
 
@@ -35,7 +35,11 @@ class Snap < ActiveRecord::Base
     AWS::S3::S3Object.store(filename, open(@target), bucket_name)
   end
 
-  def public_url
-    "%s/%s/%s" % ['https://s3.amazonaws.com', bucket_name, filename]
+  def private_url
+    "%s/%s" % [GlobalContext.http_host, filename]
+  end
+
+  def public_url(resource)
+    "%s/%s/%d/%d/%s" % ['https://s3.amazonaws.com', bucket_name, user_id, id, resource]
   end
 end

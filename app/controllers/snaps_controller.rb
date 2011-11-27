@@ -10,6 +10,10 @@ class SnapsController < ApplicationController
     end
   end
 
+  def resource
+    redirect_to current_user.snaps.find(params[:snap_id]).public_url(params[:resource])
+  end
+
   # GET /snaps/1
   # GET /snaps/1.xml
   def show

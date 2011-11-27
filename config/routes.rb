@@ -1,4 +1,5 @@
 Snapper::Application.routes.draw do
+  match '/:user_id/:snap_id/*resource', :to => 'snaps#resource' , :constraints => {:user_id => /\d+/, :snap_id => /\d+/ }
   resources :snaps
 
   devise_for :users
