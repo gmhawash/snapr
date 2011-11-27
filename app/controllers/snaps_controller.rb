@@ -42,9 +42,6 @@ class SnapsController < ApplicationController
   def create
     # Check some authenticity token, username, password (must be logged into a session)...
     @snap = Snap.new(params[:snap])
-    response = RestClient.get('http://www.yahoo.com')
-
-    @snap.html = response.body
 
     render :inline => @snap.html
     #respond_to do |format|

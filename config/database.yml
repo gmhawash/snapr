@@ -12,14 +12,13 @@ development:
   adapter: postgresql
   encoding: unicode
   database: snapper_dev
-  pool: 5
   username: mmh
   password: seven11
+  host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
   #port: 5432
 
   # Schema search path. The server defaults to $user,public
@@ -39,8 +38,8 @@ test:
   encoding: unicode
   database: snapper_test
   pool: 5
-  username: snapper
-  password:
+  username: mmh
+  password: seven11
 
 production:
   adapter: postgresql
