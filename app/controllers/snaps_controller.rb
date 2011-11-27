@@ -43,7 +43,7 @@ class SnapsController < ApplicationController
     # Check some authenticity token, username, password (must be logged into a session)...
     @snap = Snap.new(params[:snap])
 
-    render :inline => @snap.html
+    render :inline => @snap.try(:html)
     #respond_to do |format|
       #if @snap.save
         #format.html { redirect_to(@snap, :notice => 'Snap was successfully created.') }

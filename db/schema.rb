@@ -23,9 +23,13 @@ ActiveRecord::Schema.define(:version => 20111124202936) do
 
   create_table "snaps", :force => true do |t|
     t.text     "html"
+    t.string   "url"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "snaps", ["url"], :name => "index_snaps_on_url"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
