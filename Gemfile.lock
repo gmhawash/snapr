@@ -44,7 +44,6 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.2.2)
       ffi (~> 1.0.6)
-    cocaine (0.2.0)
     columnize (0.3.5)
     devise (1.5.1)
       bcrypt-ruby (~> 3.0)
@@ -76,11 +75,6 @@ GEM
     mime-types (1.17.2)
     nokogiri (1.5.0)
     orm_adapter (0.0.5)
-    paperclip (2.4.5)
-      activerecord (>= 2.3.0)
-      activesupport (>= 2.3.2)
-      cocaine (>= 0.0.2)
-      mime-types
     pg (0.11.0)
     polyglot (0.3.3)
     rack (1.2.4)
@@ -155,7 +149,6 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   nokogiri
-  paperclip
   pg
   rails (= 3.0.9)
   rest-client

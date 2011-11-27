@@ -24,7 +24,6 @@ gem "jquery-rails"
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem "settingslogic"
 gem 'rest-client'
-gem 'paperclip'
 gem 'nokogiri'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'ruby-debug'

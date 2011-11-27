@@ -41,9 +41,11 @@ class SnapsController < ApplicationController
   # POST /snaps.xml
   def create
     # Check some authenticity token, username, password (must be logged into a session)...
-    @snap = Snap.new(params[:snap])
+    @snap = Snap.create(params[:snap].merge(:user_id => 1, :url => 'http://www.yahoo.com'))
 
-    render :inline => @snap.try(:html)
+    @snap.save
+    render :inline => @snap.try(:body)
+    
     #respond_to do |format|
       #if @snap.save
         #format.html { redirect_to(@snap, :notice => 'Snap was successfully created.') }

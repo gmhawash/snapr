@@ -1,7 +1,7 @@
 class CreateSnaps < ActiveRecord::Migration
   def self.up
     create_table :snaps do |t|
-      t.text :html
+      t.text :body
       t.string :url
       t.references :user
 
